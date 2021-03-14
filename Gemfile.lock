@@ -47,7 +47,7 @@ GEM
     activerecord (6.1.0)
       activemodel (= 6.1.0)
       activesupport (= 6.1.0)
-    activerecord-postgres_enum (1.5.0)
+    activerecord-postgres_enum (1.6.0)
       activerecord (>= 5, < 6.2)
       pg
     activestorage (6.1.0)
@@ -327,7 +327,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-postgres_enum
+  activerecord-postgres_enum (~> 1.6)
   annotate
   awesome_print
   bootsnap

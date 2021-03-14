@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.0"
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "activerecord-postgres_enum"
+gem "activerecord-postgres_enum", '~> 1.6'
 gem "awesome_print"
 gem "bootsnap", require: false
 gem "date_by_example"
