@@ -298,9 +298,8 @@ GEM
     test-prof (0.12.2)
     thor (1.0.1)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (0.5.9)
+      rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
@@ -364,7 +363,7 @@ DEPENDENCIES
   spring-watcher-listen
   table_print
   test-prof
-  turbolinks
+  turbo-rails
   tzinfo-data
   web-console
   webpacker (= 6.0.0.beta.2)
