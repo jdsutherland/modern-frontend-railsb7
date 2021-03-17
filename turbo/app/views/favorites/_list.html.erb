@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "favorite-concerts" do %>
+  <section class="my-4">
+    <div class="text-3xl font-bold">Favorite Concerts</div>
+    <% if current_user.favorites.empty? %>
+      <div class="text-xl font-bold">No favorite concerts yet</div>
+    <% else %>
+      <% current_user.concerts.each do |concert| %>
+        <%= render "concerts/schedule_concert",
+          concert: concert,
+          favorite: true
+        %>
+      <% end %>
+    <% end %>
+  </section>
+<% end %>

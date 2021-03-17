@@ -7,7 +7,7 @@
 <% if show %>
   <section class="js--day-text">
     <% schedule_day.concerts.sort_by(&:start_time).each do |concert| %>
-      <%= render "concerts/schedule_concert", concert: concert %>
+      <%= render "concerts/schedule_concert", concert: concert, favorite: false %>
     <% end %>
   </section>
 <% end %>

@@ -1,4 +1,4 @@
-<%= turbo_frame_tag dom_id(concert) do %>
+<%= turbo_frame_tag dom_id(concert, favorite ? "fav" : nil) do %>
   <article class="my-6">
     <div class="grid gap-4 grid-cols-5">
       <div class="text-xl col-span-1">
@@ -8,7 +8,9 @@
       <div class="col-span-3">
         <div class="name">
           <div class="text-lg font-bold">
-            <%= link_to(concert.name, concert) %>
+            <%= link_to(concert.name,
+                        concert,
+                        data: {"turbo-frame": "_top"}) %>
           </div>
         </div>
         <div class="bands">
@@ -39,11 +41,13 @@
             <%= button_to "Remove Favorite",
               favorite_path(id: current_user.favorite(concert)),
               method: "delete",
+              form: {data: {"turbo-frame": "favorite-concerts"}},
               class: SimpleForm.button_class %>
           <% else %>
             <%= button_to "Make Favorite",
               favorites_path(concert_id: concert.id),
               method: "post",
+              form: {data: {"turbo-frame": "favorite-concerts"}},
               class: SimpleForm.button_class %>
           <% end %>
         </div>

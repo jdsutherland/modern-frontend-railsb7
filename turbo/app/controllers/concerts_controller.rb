@@ -13,7 +13,7 @@ class ConcertsController < ApplicationController
     if params[:inline]
       render(
         partial: "concerts/schedule_concert",
-        locals: {concert: @concert}
+        locals: {concert: @concert, favorite: false}
       )
     end
   end
@@ -57,7 +57,7 @@ class ConcertsController < ApplicationController
         format.html do
           render(
             partial: "concerts/schedule_concert",
-            locals: {concert: @concert}
+            locals: {concert: @concert, favorite: false}
           )
         end
 

@@ -24,16 +24,7 @@
   </section>
   <br>
   <% if current_user %>
-    <section class="my-4">
-      <div class="text-3xl font-bold">Favorite Concerts</div>
-      <% if current_user.favorites.empty? %>
-        <div class="text-xl font-bold">No favorite concerts yet</div>
-      <% else %>
-        <% current_user.concerts.each do |concert| %>
-          <%= render "concerts/schedule_concert", concert: concert %>
-        <% end %>
-      <% end %>
-    </section>
+    <%= render "favorites/list" %>
   <% end %>
   <section class="js--day">
     <% @schedule.schedule_days.each do |schedule_day| %>
