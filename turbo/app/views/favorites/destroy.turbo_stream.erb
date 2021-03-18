@@ -1,0 +1,7 @@
+<%= turbo_stream.remove(dom_id(@favorite.concert, "fav")) %>
+
+<%= turbo_stream.replace(
+  dom_id(@favorite.concert),
+  partial: "concerts/schedule_concert",
+  locals: {concert: @favorite.concert, favorite: false}
+) %>

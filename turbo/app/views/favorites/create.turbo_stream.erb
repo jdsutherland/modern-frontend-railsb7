@@ -1,0 +1,9 @@
+<%= turbo_stream.append(
+  "favorite-concerts",
+  partial: "concerts/schedule_concert",
+  locals: {concert: @favorite.concert, favorite: true}) %>
+
+<%= turbo_stream.replace(
+  dom_id(@favorite.concert),
+  partial: "concerts/schedule_concert",
+  locals: {concert: @favorite.concert, favorite: false}) %>
