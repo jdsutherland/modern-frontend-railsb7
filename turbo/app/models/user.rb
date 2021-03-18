@@ -38,4 +38,8 @@ class User < ApplicationRecord
   def favorite(concert)
     favorites.find_by(concert_id: concert.id)
   end
+
+  def favorites_count
+    favorites.count
+  end
 end

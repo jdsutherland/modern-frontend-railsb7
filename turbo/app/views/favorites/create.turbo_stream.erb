@@ -7,3 +7,7 @@
   dom_id(@favorite.concert),
   partial: "concerts/schedule_concert",
   locals: {concert: @favorite.concert, favorite: false}) %>
+
+<%= turbo_stream.update(
+  "favorites-count",
+  plain: current_user.favorites_count) %>
