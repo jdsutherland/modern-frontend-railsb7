@@ -41,7 +41,11 @@
   },
   "babel": {
     "presets": [
-      "./node_modules/@rails/webpacker/package/babel/preset.js"
+      [
+        "./node_modules/@rails/webpacker/package/babel/preset.js",
+        { "shippedProposals": true }
+      ],
+      ["@babel/preset-typescript"]
     ]
   },
   "browserslist": [
