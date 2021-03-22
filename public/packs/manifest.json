@@ -1,0 +1,26 @@
+{
+  "application.css": "/packs/css/application.css",
+  "application.js": "/packs/js/application-050ae57449f625f300b1.js",
+  "css/application.css.map": "/packs/css/application.css.map",
+  "entrypoints": {
+    "application": {
+      "assets": {
+        "js": [
+          "/packs/js/runtime-af7af124088ce8d36109.js",
+          "/packs/js/vendors-node_modules_hotwired_turbo-rails_app_javascript_turbo_index_js-node_modules_rails_ac-aa379d-7e88e8b37b04110794c0.js",
+          "/packs/js/application-050ae57449f625f300b1.js"
+        ],
+        "css": [
+          "/packs/css/application.css"
+        ]
+      }
+    }
+  },
+  "js/application-050ae57449f625f300b1.js.map": "/packs/js/application-050ae57449f625f300b1.js.map",
+  "js/runtime-af7af124088ce8d36109.js.map": "/packs/js/runtime-af7af124088ce8d36109.js.map",
+  "js/vendors-node_modules_hotwired_turbo-rails_app_javascript_turbo_index_js-node_modules_rails_ac-aa379d-7e88e8b37b04110794c0.js": "/packs/js/vendors-node_modules_hotwired_turbo-rails_app_javascript_turbo_index_js-node_modules_rails_ac-aa379d-7e88e8b37b04110794c0.js",
+  "js/vendors-node_modules_hotwired_turbo-rails_app_javascript_turbo_index_js-node_modules_rails_ac-aa379d-7e88e8b37b04110794c0.js.map": "/packs/js/vendors-node_modules_hotwired_turbo-rails_app_javascript_turbo_index_js-node_modules_rails_ac-aa379d-7e88e8b37b04110794c0.js.map",
+  "js/vendors-node_modules_hotwired_turbo-rails_node_modules_rails_actioncable_src_index_js-f1423e8b347230d4dbb8.chunk.js": "/packs/js/vendors-node_modules_hotwired_turbo-rails_node_modules_rails_actioncable_src_index_js-f1423e8b347230d4dbb8.chunk.js",
+  "js/vendors-node_modules_hotwired_turbo-rails_node_modules_rails_actioncable_src_index_js-f1423e8b347230d4dbb8.chunk.js.map": "/packs/js/vendors-node_modules_hotwired_turbo-rails_node_modules_rails_actioncable_src_index_js-f1423e8b347230d4dbb8.chunk.js.map",
+  "runtime.js": "/packs/js/runtime-af7af124088ce8d36109.js"
+}
