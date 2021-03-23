@@ -19,24 +19,24 @@ export default class FavoriteToggleController extends Controller {
     this.flipState()
   }
 
-  flipState() {
+  flipState(): void {
     this.visibleValue = !this.visibleValue
   }
 
-  visibleValueChanged() {
+  visibleValueChanged(): void {
     this.updateHiddenClass()
     this.updateText()
   }
 
-  updateHiddenClass() {
+  updateHiddenClass(): void {
     this.elementToHideTarget.classList.toggle(this.hiddenClass, !this.visibleValue)
   }
 
-  newText() {
+  newText(): string {
     return this.visibleValue ? "Hide" : "Show"
   }
 
-  updateText() {
+  updateText(): void {
     this.elementWithTextTarget.innerText = this.newText()
   }
 }
