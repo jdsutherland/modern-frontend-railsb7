@@ -15,12 +15,15 @@ export default class FavoriteToggleController extends Controller {
 
   toggle(): void {
     this.flipState()
-    this.updateHiddenClass()
-    this.updateText()
   }
 
   flipState() {
     this.visibleValue = !this.visibleValue
+  }
+
+  visibleValueChanged() {
+    this.updateHiddenClass()
+    this.updateText()
   }
 
   updateHiddenClass() {
