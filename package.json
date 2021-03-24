@@ -2,6 +2,7 @@
   "name": "north-by",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.7",
     "@hotwired/turbo-rails": "^7.0.0-beta.5",
     "@rails/actioncable": "^6.0.0",
@@ -11,6 +12,8 @@
     "@tailwindcss/aspect-ratio": "^0.2.0",
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/typography": "^0.3.1",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
     "autoprefixer": "^10.1.0",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.1.5",
@@ -20,6 +23,8 @@
     "postcss-import": "^14.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
     "stimulus": "^2.0.0",
@@ -43,9 +48,13 @@
     "presets": [
       [
         "./node_modules/@rails/webpacker/package/babel/preset.js",
-        { "shippedProposals": true }
+        {
+          "shippedProposals": true
+        }
       ],
-      ["@babel/preset-typescript"]
+      [
+        "@babel/preset-typescript"
+      ]
     ]
   },
   "browserslist": [
