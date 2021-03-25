@@ -6,14 +6,18 @@
            data-css-css-class="hidden">
     <div class="text-3xl font-bold">
       Favorite Concerts
-      <span class="<%= SimpleForm.button_class %> py-1 text-xl font-semibold"
-            data-controller="text"
-            data-action="click->css#toggle click->text#toggle"
-            data-text-target="elementWithText"
-            data-text-status-value="false"
-            data-text-on-value="Show"
-            data-text-off-value="Hide">
-        Hide
+      <span class="<%= SimpleForm.button_class %>"
+            data-controller="css-flip"
+            data-action="click->css#toggle click->css-flip#toggle"
+            data-css-flip-status-value="true"
+            data-css-flip-off-class="is-closed"
+            data-css-flip-on-class="is-open">
+        <%= image_pack_tag(
+          "media/images/chevron-right.svg",
+          width: 25,
+          height: 25,
+          class: "inline",
+          "data-css-flip-target": "elementToChange") %>
       </span>
     </div>
     <div data-css-target="elementToChange">
