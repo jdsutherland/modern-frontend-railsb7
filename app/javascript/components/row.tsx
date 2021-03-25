@@ -8,7 +8,9 @@ interface RowProps {
 
 const Row = ({ rowNumber, seatsInRow }: RowProps) => {
   const seatItems = Array.from(Array(seatsInRow).keys()).map(
-    (seatNumber) => <Seat key={seatNumber} seatNumber={seatNumber} />
+    (seatNumber) => {
+      return <Seat key={seatNumber} seatNumber={seatNumber} initialStatus="open" />
+    }
   )
   return <tr className="h-20">{seatItems}</tr>
 }
