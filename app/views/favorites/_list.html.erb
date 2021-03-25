@@ -6,7 +6,7 @@
            data-css-css-class="hidden">
     <div class="text-3xl font-bold">
       Favorite Concerts
-      <span class="<%= SimpleForm.button_class %>"
+      <span class="<%= SimpleForm.button_class %> blue-hover"
             data-controller="css-flip"
             data-action="click->css#toggle click->css-flip#toggle"
             data-css-flip-status-value="true"
@@ -16,7 +16,7 @@
           "media/images/chevron-right.svg",
           width: 25,
           height: 25,
-          class: "inline",
+          class: "inline arrow-transition",
           "data-css-flip-target": "elementToChange") %>
       </span>
     </div>
