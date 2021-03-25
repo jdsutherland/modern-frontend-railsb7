@@ -2,25 +2,22 @@ import * as React from "react"
 
 interface SeatProps {
   seatNumber: number
-  initialStatus: string
+  status: string
+  clickHandler: (seatNumber: number) => void
 }
 
-const Seat = ({ seatNumber, initialStatus }: SeatProps) => {
-  const [status, setStatus] = React.useState(initialStatus)
-
-  function changeState(): void {
-    if (status === "held") {
-      setStatus("open")
-    } else {
-      setStatus("held")
-    }
+const Seat = ({ seatNumber, status, clickHandler }: SeatProps) => {
+  const changeState = (): void => {
+    clickHandler(seatNumber)
   }
 
   function stateDisplayClass(): string {
-    if (status === "held") {
+    if (status === "open") {
+      return "bg-white hover:bg-blue-300"
+    } else if (status === "held") {
       return "bg-green-500"
     } else {
-      return "bg-white hover:bg-blue-300"
+      return "bg-red-500"
     }
   }
 
@@ -30,7 +27,8 @@ const Seat = ({ seatNumber, initialStatus }: SeatProps) => {
     <td>
       <span
         className={`${cssClass} ${stateDisplayClass()}`}
-        onClick={changeState}>
+        onClick={changeState}
+      >
         {seatNumber}
       </span>
     </td>

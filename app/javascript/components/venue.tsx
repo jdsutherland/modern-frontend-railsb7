@@ -1,5 +1,6 @@
 import * as React from "react"
-import Row from 'components/row.tsx'
+import VenueHeader from 'components/venue_header.tsx'
+import VenueBody from 'components/venue_body.tsx'
 
 interface VenueProps {
   rows: number
@@ -7,19 +8,20 @@ interface VenueProps {
 }
 
 const Venue = ({ rows, seatsInRow }: VenueProps) => {
-  const rowNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-  const rowItems = rowNumbers.map((rowNumber) => {
-    return (
-      <Row
-        key={rowNumber}
-        rowNumber={rowNumber}
-        seatsInRow={seatsInRow} />
-    )
-  })
+  const [ticketsToBuy, setTicketsToBuy] = React.useState(1)
+
   return (
-    <table className="table">
-      <tbody>{rowItems}</tbody>
-    </table>
+    <>
+      <VenueHeader
+        seatsInRow={seatsInRow}
+        setTicketsToBuy={setTicketsToBuy}
+      />
+      <VenueBody
+        seatsInRow={seatsInRow}
+        rows={rows}
+        ticketsToBuy={ticketsToBuy}
+      />
+    </>
   )
 }
 
