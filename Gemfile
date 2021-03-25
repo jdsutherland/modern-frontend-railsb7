@@ -18,7 +18,7 @@ gem "sass-rails"
 gem "simple_form"
 gem "table_print"
 gem "turbo-rails"
-gem "webpacker", "6.0.0.beta.2"
+gem "webpacker", "6.0.0.beta.5"
 
 group :development, :test do
   gem "cypress-rails"
