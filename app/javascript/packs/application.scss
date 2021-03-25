@@ -21,3 +21,13 @@
     background-color: #5C79A0;
   }
 }
+
+.resizer {
+  transition: all 1s ease-in-out;
+  max-height: 1000px;
+  overflow: hidden;
+
+  &.shrink {
+    max-height: 0px;
+  }
+}
