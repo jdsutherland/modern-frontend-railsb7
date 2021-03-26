@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import "animate.css/animate.css";
 
 .is-open {
   transform: rotate(90deg);

@@ -1,5 +1,7 @@
-<%= turbo_frame_tag dom_id(concert, favorite ? "fav" : nil) do %>
-  <article class="my-6">
+<%= turbo_frame_tag(dom_id(concert, favorite ? "fav" : nil),
+                    "data-animate-out": "animate__slideOutRight") do %>
+  <% fav_class = favorite ? "animate__animated animate__slideInRight" : "" %>
+  <article class="my-6 <%= fav_class %>">
     <div class="grid gap-4 grid-cols-5">
       <div class="text-xl col-span-1">
         <%= concert.start_time.by_example("3:04 PM") %>
