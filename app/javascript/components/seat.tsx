@@ -1,4 +1,33 @@
 import * as React from "react"
+import styled from 'styled-components';
+
+const stateColor = (status: string): string => {
+  if (status === "open") {
+    return "white"
+  } else if (status === "held") {
+    return "green"
+  } else {
+    return "red"
+  }
+}
+
+interface SquareProps {
+  status: string
+  className?: string
+}
+
+const buttonClass = "p-4 m-2 border-black border-4 text-lg"
+
+const ButtonSquare = styled.span.attrs({
+  className: buttonClass,
+})<SquareProps>`
+  background-color: ${props => stateColor(props.status)};
+  transition: all 1s ease-in-out;
+
+  &:hover {
+    background-color: ${props => props.status === "open" ? "lightblue" : stateColor(props.status)}
+  }
+`
 
 interface SeatProps {
   seatNumber: number
@@ -7,30 +36,13 @@ interface SeatProps {
 }
 
 const Seat = ({ seatNumber, status, clickHandler }: SeatProps) => {
-  const changeState = (): void => {
-    clickHandler(seatNumber)
-  }
-
-  function stateDisplayClass(): string {
-    if (status === "open") {
-      return "bg-white hover:bg-blue-300"
-    } else if (status === "held") {
-      return "bg-green-500"
-    } else {
-      return "bg-red-500"
-    }
-  }
-
-  const cssClass = "p-4 m-2 border-black border-4 text-lg"
+  const changeState = (): void => clickHandler(seatNumber)
 
   return (
     <td>
-      <span
-        className={`${cssClass} ${stateDisplayClass()}`}
-        onClick={changeState}
-      >
+      <ButtonSquare status={status} onClick={changeState}>
         {seatNumber}
-      </span>
+      </ButtonSquare>
     </td>
   )
 }
