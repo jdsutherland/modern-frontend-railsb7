@@ -1,7 +1,14 @@
 <%= turbo_frame_tag(dom_id(concert, favorite ? "fav" : nil),
                     "data-animate-out": "animate__slideOutRight") do %>
   <% fav_class = favorite ? "animate__animated animate__slideInRight" : "" %>
-  <article class="my-6 <%= fav_class %>">
+  <% sold_out = concert.sold_out? ? "true" : "false" %>
+  <% unsold_count = concert.unsold_ticket_count %>
+  <article class="my-6 <%= fav_class %>"
+           data-sold-out-data-target="concert"
+           data-controller="concert"
+           data-concert-id-value="<%= concert.id %>"
+           data-concert-sold-out-value="<%= sold_out %>"
+           data-concert-tickets-remaining-value="<%= unsold_count %>">
     <div class="grid gap-4 grid-cols-5">
       <div class="text-xl col-span-1">
         <%= concert.start_time.by_example("3:04 PM") %>
@@ -26,12 +33,7 @@
         </div>
       </div>
       <div class="text-xl col-span-1">
-        <% if concert.sold_out? %>
-          Sold out
-        <% else %>
-          <%= pluralize(concert.unsold_ticket_count, "Tickets") %>
-          Remaining
-        <% end %>
+        <span data-concert-target="tickets"></span>
         <br/>
         <br/>
         <div class="flex">
