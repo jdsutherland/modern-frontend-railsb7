@@ -57,4 +57,8 @@ class Ticket < ApplicationRecord
       if self.user == user then "bg-green-600" else "bg-yellow-500" end
     end
   end
+
+  def to_concert_h
+    {id: id, row: row, number: number, status: status}
+  end
 end

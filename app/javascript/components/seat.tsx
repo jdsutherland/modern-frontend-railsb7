@@ -2,12 +2,14 @@ import * as React from "react"
 import styled from 'styled-components';
 
 const stateColor = (status: string): string => {
-  if (status === "open") {
+  if (status === "unsold") {
     return "white"
   } else if (status === "held") {
     return "green"
-  } else {
+  } else if (status === "purchased") {
     return "red"
+  } else {
+    return "yellow"
   }
 }
 
@@ -41,7 +43,7 @@ const Seat = ({ seatNumber, status, clickHandler }: SeatProps) => {
   return (
     <td>
       <ButtonSquare status={status} onClick={changeState}>
-        {seatNumber}
+        {seatNumber + 1}
       </ButtonSquare>
     </td>
   )

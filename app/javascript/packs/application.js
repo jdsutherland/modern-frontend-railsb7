@@ -17,10 +17,15 @@ import * as ReactDOM from "react-dom"
 import Venue from "components/venue.tsx"
 
 document.addEventListener("turbo:load", () => {
-  if (document.getElementById("react-element")) {
+  const element = document.getElementById("react-element")
+  if (element) {
     ReactDOM.render(
-      <Venue rows={10} seatsInRow={10} />,
-      document.getElementById("react-element")
+      <Venue
+        rows={parseInt(element.dataset.rows, 10)}
+        seatsInRow={parseInt(element.dataset.seatsInRow, 10)}
+        concertId={parseInt(element.dataset.concertId, 10)}
+      />,
+      element
     )
   }
 })
